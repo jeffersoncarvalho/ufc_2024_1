@@ -22,6 +22,7 @@ export default function App() {
       <Link href="/introduction/15_promises">Promise</Link> <br />
       <Link href="/introduction/16_fetch">Fetch</Link> <br />
       <Link href="/introduction/17_client_server_comm">Client Server Communication</Link> <br />
+      <Link href="/introduction/18_poke_app">Poke App</Link> <br />
     </>
   )
 }
