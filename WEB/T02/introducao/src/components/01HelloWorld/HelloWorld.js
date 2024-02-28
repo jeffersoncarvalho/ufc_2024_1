@@ -15,7 +15,6 @@
     )
 }*/
 
-
 const HelloWorld = () => 
     <div>
         <h1>Hello World REACT com função ARROW!</h1>

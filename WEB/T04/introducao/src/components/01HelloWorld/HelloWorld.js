@@ -16,18 +16,16 @@
     )
 }*/
 
-/*const HelloWorld = () => {
+const HelloWorld = () => {
     return <div>
             <h2>Meu primeiro componente REACT e função ARROW!</h2>
         </div>
-}*/
+}
 
-
-
-const HelloWorld = () => 
+/*const HelloWorld = () => 
     <div>
         <h2>Meu primeiro componente REACT e função ARROW!</h2>
     </div>
-
+*/
 
 export default HelloWorld
