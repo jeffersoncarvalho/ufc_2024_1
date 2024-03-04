@@ -1,7 +1,8 @@
-const Produto = ({nome, categoria, valor}) => {
+const Produto = ({nome,categoria,valor}) => {
 
-    //let objJSON = {nome:"Jefferson", idade: 18, curso: "Engenharia de Alimentos", notas: {nota1:5,nota2:3}}
-    //const {nome, categoria, valor} = props
+    function retornaJson() {
+        return {x:40,y:56}
+    }
 
     return (
         <div>
@@ -9,6 +10,7 @@ const Produto = ({nome, categoria, valor}) => {
             <h3>Nome: {nome}</h3>
             <h3>Categoria: {categoria}</h3>
             <h3>Preço: R$ {valor}</h3>
+            <h3>{JSON.stringify(retornaJson())}</h3>
         </div>
     )
 }
