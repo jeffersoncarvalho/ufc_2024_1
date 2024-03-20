@@ -12,13 +12,15 @@
 //import Pokemon from "./components/06Estados/Pokemon";
 //import { CompA } from "./components/07PropDrilling/PropDrilling";
 //import { CompA } from "./components/08Contexto/Contexto";
-import PokemonPrincipal from "./components/09PokemonContexto/PokemonPrincipal";
+//import PokemonPrincipal from "./components/09PokemonContexto/PokemonPrincipal";
+//import Efeito from "./components/10Efeito/Efeito";
+import ComponentePromessa from "./components/11Promessas/MeuAsync";
 
 function App() {
   return (
     <div>
-      <h1>Desenvolvimento de Software para a WEB!</h1>
-      <PokemonPrincipal />
+      <h2>Desenvolvimento de Software para a WEB!</h2>
+      <ComponentePromessa />
     </div>
   )
 }
