@@ -14,16 +14,44 @@
 //import { CompA } from "./components/08Contexto/Contexto";
 //import PokemonPrincipal from "./components/09PokemonContexto/PokemonPrincipal";
 //import Efeito from "./components/10Efeito/Efeito";
-import ComponentePromessa from "./components/11Promessas/MeuAsync";
+//import ComponentePromessa from "./components/11Promessas/MeuAsync";
+//import Pai from "./components/00Atividades/atividade01/questao01/Pai";
+//import * as PC from "./components/00Atividades/atividade01/questao02/PC"
+//import { Arena, World, Hero, Enemy } from "./components/00Atividades/atividade01/questao03/Batalha";
+//import FunctionContextA from "./components/00Atividades/atividade02/questao01/FunctionContextA"
+import Avo from "./components/00Atividades/atividade02/questao02/Avo";
 
 function App() {
   return (
     <div>
-      <h2>Desenvolvimento de Software para a WEB!</h2>
-      <ComponentePromessa />
+      <Avo />
     </div>
   )
 }
+
+/*function App() {
+  return (
+    <div>
+      <World>
+        <Arena name="Arena de Tokyo">
+            <Hero name="Goku" />
+            <Enemy name="Vegeta" />
+        </Arena>
+      </World>
+    </div>
+  )
+}*/
+
+/*function App() {
+  return (
+    <div>
+      <h2>Desenvolvimento de Software para a WEB!</h2>
+      <PC.PlacaMae nome="Placa Mãe" preco={50} />
+      <PC.Memoria nome="Memória" preco={500} />
+      <PC.PlacaDeVideo nome="Placa de Vídeo" preco={150} />
+    </div>
+  )
+}*/
 
 //questão do children
 /*function App() {
