@@ -19,12 +19,13 @@
 //import * as PC from "./components/00Atividades/atividade01/questao02/PC"
 //import { Arena, World, Hero, Enemy } from "./components/00Atividades/atividade01/questao03/Batalha";
 //import FunctionContextA from "./components/00Atividades/atividade02/questao01/FunctionContextA"
-import Avo from "./components/00Atividades/atividade02/questao02/Avo";
+//import Avo from "./components/00Atividades/atividade02/questao02/Avo";
+import CovidAxios from "./components/12Axios/CovidAxios";
 
 function App() {
   return (
     <div>
-      <Avo />
+      <CovidAxios />
     </div>
   )
 }
