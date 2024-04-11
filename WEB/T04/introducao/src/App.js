@@ -20,12 +20,13 @@
 //import { Arena, World, Hero, Enemy } from "./components/00Atividades/atividade01/questao03/Batalha";
 //import FunctionContextA from "./components/00Atividades/atividade02/questao01/FunctionContextA"
 //import Avo from "./components/00Atividades/atividade02/questao02/Avo";
-import CovidAxios from "./components/12Axios/CovidAxios";
+//import CovidAxios from "./components/12Axios/CovidAxios";
+import PrincipalRedux from "./components/13Redux/PrincipalRedux";
 
 function App() {
   return (
     <div>
-      <CovidAxios />
+      <PrincipalRedux />
     </div>
   )
 }

@@ -13,18 +13,14 @@
 
 //import * as PC from "./atividades/01_atividade/questao02/Questao02"
 
-import { Arena, World, Hero, Enemy} from "./atividades/01_atividade/questao03/Batalha"  
-
+//import { Arena, World, Hero, Enemy} from "./atividades/01_atividade/questao03/Batalha"  
+//import AcessarCVD19 from "./components/10Axios/AcessCVD19";
+import PrincipalRedux from "./components/11Redux/PrincipalRedux";
 
 function App() {
   return (
     <div>
-      <World>
-          <Arena arena="Planeta Terra">
-            <Hero name="Goku" />
-            <Enemy name="Vegeta" />
-          </Arena>
-      </World>
+      <PrincipalRedux />
     </div>
   );
 }
