@@ -21,13 +21,12 @@
 //import FunctionContextA from "./components/00Atividades/atividade02/questao01/FunctionContextA"
 //import Avo from "./components/00Atividades/atividade02/questao02/Avo";
 //import CovidAxios from "./components/12Axios/CovidAxios";
-import PrincipalRedux from "./components/13Redux/PrincipalRedux";
+//import PrincipalRedux from "./components/13Redux/PrincipalRedux";
+import Navbar from "./components/16Bootsrap/00Navbar";
 
 function App() {
   return (
-    <div>
-      <PrincipalRedux />
-    </div>
+    <Navbar />
   )
 }
 
