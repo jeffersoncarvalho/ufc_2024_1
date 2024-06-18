@@ -24,12 +24,12 @@
 //import PrincipalRedux from "./components/13Redux/PrincipalRedux";
 //import Navbar from "./components/16Bootsrap/00Navbar";
 //import Questao01A from "./components/00Provas/p1/Questao01";
-
-import SaveLoadData from "./components/14Storage/SaveLoadData";
+//import SaveLoadData from "./components/14Storage/SaveLoadData";
+import Main from "./components/17CRUD/Main";
 
 function App() {
   return (
-    <SaveLoadData />
+    <Main />
   )
 }
 
