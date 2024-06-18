@@ -22,11 +22,14 @@
 //import Avo from "./components/00Atividades/atividade02/questao02/Avo";
 //import CovidAxios from "./components/12Axios/CovidAxios";
 //import PrincipalRedux from "./components/13Redux/PrincipalRedux";
-import Navbar from "./components/16Bootsrap/00Navbar";
+//import Navbar from "./components/16Bootsrap/00Navbar";
+//import Questao01A from "./components/00Provas/p1/Questao01";
+
+import SaveLoadData from "./components/14Storage/SaveLoadData";
 
 function App() {
   return (
-    <Navbar />
+    <SaveLoadData />
   )
 }
 

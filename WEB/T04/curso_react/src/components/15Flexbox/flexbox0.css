@@ -1,0 +1,23 @@
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: red;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+article {
+    background-color: rgb(0, 234, 255);
+    margin: 10px;
+    padding: 10px;
+    flex: 300px;
+}
+
+#teste {
+    width: 150px;
+}

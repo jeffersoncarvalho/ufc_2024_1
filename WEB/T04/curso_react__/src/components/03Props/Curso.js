@@ -1,1 +1,0 @@
-//imprima o nome do curso e pelo menos 3 disciplinas
