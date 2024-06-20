@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/crud.css"
 //import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import { Outlet, Link } from "react-router-dom";
@@ -10,8 +11,8 @@ const Home = () => {
         <div className="container-fluid">
           <div style={{ display: "flex", alignItems: "center" }}>
             <span style={{ marginLeft: "5px" }}>
-              <a className="navbar-brand" href="#">
-                Bootstrap
+              <a className="navbar-brand" href="/">
+                CRUD-WEB
               </a>
             </span>
           </div>
@@ -23,41 +24,32 @@ const Home = () => {
                   Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link to="/professores/listar" className="dropdown-item">
-                      Listar Professores
-                    </Link>
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
+              <li className="nav-item center-li" >
+                {/** INÍCIO - DROPDOWN DE PROFESSOR */}
+                <div className="dropdown">
+                  <button
+                    className="btn dropdown-toggle button-as-text"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Professor
+                  </button>
+
+                  <ul className="dropdown-menu">
+                    <li>
+                      <Link to="/professores/listar" className="dropdown-item">
+                        Listar Professor
+                      </Link>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="/professores/criar">
+                        Criar Professor
+                      </a> 
+                    </li>
+                  </ul>
+                </div>
+                {/** FIM - DROPDOWN DE PROFESSOR */}
               </li>
             </ul>
           </div>

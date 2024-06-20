@@ -1,8 +1,10 @@
+import "../css/crud.css"
+
 const Listar = () => {
     return (
-        <>
-            <h1>Listar Professores</h1>
-        </>
+        <div className="page-content">
+            <h2>Listar Professor</h2>
+        </div>
     )
 }
 
