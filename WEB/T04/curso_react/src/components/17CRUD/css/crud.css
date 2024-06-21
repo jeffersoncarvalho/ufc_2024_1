@@ -7,11 +7,20 @@
     align-items: center;
 }
 .page-content {
-    width: 40%;
+    width: 60%;
     margin: 20px;
     margin-top: 30px;
 }
 
 .form-content {
     margin-top: 30px;
+}
+
+.table-content {
+    margin-top: 30px;
+}
+
+.button-space {
+    margin-left: 5px;
+    margin-right: 5px;
 }
