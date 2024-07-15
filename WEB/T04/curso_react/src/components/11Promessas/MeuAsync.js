@@ -20,7 +20,7 @@ const ComponentePromessa = () => {
 
     const [resultado, setResultado] = useState("")
 
-    async function apiGetPromessa() {
+    const apiGetPromessa = async () => {
         try{
             const res = await minhaPromessa
             setResultado(res)

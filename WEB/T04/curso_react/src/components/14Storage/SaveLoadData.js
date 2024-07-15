@@ -6,15 +6,15 @@ const SaveLoadData = () => {
 
     function saveData() {
         const aluno = { "nome": "Jefferson", "idade": 40, "curso": "Sistemas de Informação" }
-        //localStorage.setItem("aluno", JSON.stringify(aluno))
-        sessionStorage.setItem("aluno", JSON.stringify(aluno))
+        localStorage.setItem("aluno", JSON.stringify(aluno))
+        //sessionStorage.setItem("aluno", JSON.stringify(aluno))
         alert("Dados salvo com sucesso.")
     }
 
     function loadData() {
         //const alunoSalvo = JSON.parse(localStorage.getItem("aluno"))
-        //const alunoSalvo = localStorage.getItem("aluno")
-        const alunoSalvo = sessionStorage.getItem("aluno")
+        const alunoSalvo = localStorage.getItem("aluno")
+        //const alunoSalvo = sessionStorage.getItem("aluno")
         setAluno(alunoSalvo)
     }
 

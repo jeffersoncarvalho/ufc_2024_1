@@ -1,0 +1,32 @@
+section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+header {
+    background-color: blueviolet;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+article {
+    background-color: aqua;
+    padding: 10px;
+    margin: 10px;
+    flex: 200px;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;   
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;     
+}

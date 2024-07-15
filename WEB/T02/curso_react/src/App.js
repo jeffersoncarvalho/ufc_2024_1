@@ -8,19 +8,17 @@
 //import { CompA } from "./components/08Context/CompContexto";
 //import PokemonPrincipal from "./components/09PokemonContexto/PokemonPrincipal";
 //import Pai from "./atividades/01_atividade/questao01/Pai";
-
 //import { PlacaMae, Memoria, PlacaDeVideo as PV} from "./atividades/01_atividade/questao02/Questao02";
-
 //import * as PC from "./atividades/01_atividade/questao02/Questao02"
-
 //import { Arena, World, Hero, Enemy} from "./atividades/01_atividade/questao03/Batalha"  
 //import AcessarCVD19 from "./components/10Axios/AcessCVD19";
-import PrincipalRedux from "./components/11Redux/PrincipalRedux";
+//import PrincipalRedux from "./components/11Redux/PrincipalRedux";
+import SaveLoadData from "./components/12LocalSessionStorage/SaveLoadData";
 
 function App() {
   return (
     <div>
-      <PrincipalRedux />
+      <SaveLoadData />
     </div>
   );
 }
