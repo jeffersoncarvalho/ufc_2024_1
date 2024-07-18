@@ -2,6 +2,7 @@ section {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    /*flex-flow: row wrap;*/ /*atalho para flex-direction e flex-wrap*/
 }
 
 header {
@@ -15,7 +16,34 @@ article {
     background-color: aqua;
     padding: 10px;
     margin: 10px;
-    flex: 200px;
+    /*flex: 200px;*/
+    flex: 1
+}
+
+article:nth-of-type(2) {
+    background-color: antiquewhite;
+    flex: 2;
+}
+
+/*article:nth-of-type(3) {
+    background-color: aquamarine;
+    flex: 3;
+}*/
+
+#terceiro {
+    background-color: brown;
+    flex: 3;
+}
+
+.terceiro {
+    background-color: black;
+    flex: 3;
+}
+.terceiro > h2 {
+    color: white;
+} 
+.terceiro > p {
+    color: white;
 }
 
 h1 {

@@ -1,0 +1,31 @@
+#container {
+
+
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid black;
+    background-color: antiquewhite;
+    height: 300px;
+}
+
+button {
+    height: 30px;
+    width: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+button:first-child {
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+button:nth-of-type(3){
+    font-weight: bold;
+    align-self: flex-end;
+}
