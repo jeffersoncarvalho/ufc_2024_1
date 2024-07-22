@@ -13,13 +13,13 @@
 //import { Arena, World, Hero, Enemy} from "./atividades/01_atividade/questao03/Batalha"  
 //import AcessarCVD19 from "./components/10Axios/AcessCVD19";
 //import PrincipalRedux from "./components/11Redux/PrincipalRedux";
-import SaveLoadData from "./components/12LocalSessionStorage/SaveLoadData";
+//import SaveLoadData from "./components/12LocalSessionStorage/SaveLoadData";
+//import MyNavbar from "./components/14Bootstrap/MyNavbar";
+import Main from "./components/15CRUD/Main";
 
 function App() {
   return (
-    <div>
-      <SaveLoadData />
-    </div>
+      <Main />
   );
 }
 
