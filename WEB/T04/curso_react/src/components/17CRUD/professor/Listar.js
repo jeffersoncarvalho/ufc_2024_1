@@ -1,4 +1,5 @@
 import professores from "../data/db_professor";
+import "../css/crud.css"
 
 const Listar = () => {
   const renderizarProfessores = () => {
@@ -18,9 +19,9 @@ const Listar = () => {
   };
 
   return (
-    <>
+    <div className="page-content">
       <h1>Listar Professor</h1>
-      <div>
+      <div className="table-content">
         <table className="table table-striped">
           <thead>
             <tr>
@@ -35,7 +36,7 @@ const Listar = () => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };
 
