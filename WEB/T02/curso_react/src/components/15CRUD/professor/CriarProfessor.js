@@ -34,7 +34,7 @@ const CriarProfessor = () => {
             <form onSubmit={handleSubmit}>
 
                 <div>
-                    <label htmlFor="idNome">
+                    <label htmlFor="idNome" className="form-label">
                         Nome
                     </label>
                     
@@ -44,11 +44,12 @@ const CriarProfessor = () => {
                         name="nome"
                         value={nome}
                         onChange={(event) => setNome(event.target.value)}
+                        className="form-control"
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="idCurso">
+                    <label htmlFor="idCurso" className="form-label">
                         Curso
                     </label>
                     
@@ -58,11 +59,12 @@ const CriarProfessor = () => {
                         name="curso"
                         value={curso}
                         onChange={(event) => setCurso(event.target.value)}
+                        className="form-control"
                     />
                 </div>
 
                 <div>
-                    <label htmlFor="idTitulacao">
+                    <label htmlFor="idTitulacao" className="form-label">
                         Titulação
                     </label>
                     
@@ -70,6 +72,7 @@ const CriarProfessor = () => {
                         id="idTitulacao"
                         value={titulacao}
                         onChange={(event) => setTitulacao(event.target.value)}
+                        className="form-select"
                     >
                         <option value="GRAD">GRADUAÇÃO</option>
                         <option value="MEST">MESTRADO</option>
@@ -78,7 +81,7 @@ const CriarProfessor = () => {
                 </div>
 
                 <div>
-                    <label>Áreas de Interesse</label>
+                    <label className="form-label">Áreas de Interesse</label>
                     <div>
                         <input 
                             id="idES"
@@ -86,8 +89,9 @@ const CriarProfessor = () => {
                             checked={ai.es}
                             name="es"
                             onChange={handleCheckbox}
+                            className="form-check-input"
                         />
-                        <label htmlFor="idES">Engenharia de Software</label>
+                        <label htmlFor="idES" className="form-check-label">Engenharia de Software</label>
                     </div>
                     <div>
                         <input 
@@ -96,8 +100,9 @@ const CriarProfessor = () => {
                             checked={ai.lc}
                             name="lc"
                             onChange={handleCheckbox}
+                            className="form-check-input"
                         />
-                        <label htmlFor="idLC">Lógica Computacional</label>
+                        <label htmlFor="idLC" className="form-check-label">Lógica Computacional</label>
                     </div>
                     <div>
                         <input 
@@ -106,8 +111,9 @@ const CriarProfessor = () => {
                             checked={ai.mc}
                             name="mc"
                             onChange={handleCheckbox}
+                            className="form-check-input"
                         />
-                        <label htmlFor="idMC">Matemática Computacional</label>
+                        <label htmlFor="idMC" className="form-check-label">Matemática Computacional</label>
                     </div>
                     <div>
                         <input 
@@ -116,8 +122,9 @@ const CriarProfessor = () => {
                             checked={ai.al}
                             name="al"
                             onChange={handleCheckbox}
+                            className="form-check-input"
                         />
-                        <label htmlFor="idAL">Algoritimos</label>
+                        <label htmlFor="idAL" className="form-check-label">Algoritimos</label>
                     </div>
                 </div>
 
@@ -129,9 +136,9 @@ const CriarProfessor = () => {
                             name="universidade"
                             value="UFC"
                             onChange={handleRadio}
-                            
+                            className="form-check-input"
                         />
-                        <label htmlFor="idUFC">UFC</label>
+                        <label htmlFor="idUFC" className="form-check-label">UFC</label>
                     </div>
                     <div>
                         <input 
@@ -140,8 +147,9 @@ const CriarProfessor = () => {
                             name="universidade"
                             value="IFCE"
                             onChange={handleRadio}
+                            className="form-check-input"
                         />
-                        <label>IFCE</label>
+                        <label htmlFor="idIFCE" className="form-check-label">IFCE</label>
                     </div>
                 </div>
 
