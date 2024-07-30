@@ -8,9 +8,13 @@ const Criar = () => {
     const [curso, setCurso] = useState("")
     const [titulacao, setTitulacao] = useState("")
 
+    const handleSelect = (event) => {
+        setTitulacao(event.target.value)
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
-        alert("Nome: " + nome + "\n Curso: " + curso)
+        alert("Nome: " + nome + "\n Curso: " + curso + " \n Titulacao: " + titulacao)
     }
     
     return (
@@ -46,6 +50,7 @@ const Criar = () => {
                         className="form-select"
                         value={titulacao}
                         id="selectTitulacao"
+                        onChange={(event) => setTitulacao(event.target.value)}
                     >
                         <option value="GRADUACAO">GRADUAÇÃO</option>
                         <option value="MESTRADO">MESTRADO</option>
@@ -69,4 +74,4 @@ const Criar = () => {
     )
 }
 
-export default Criar
+export { Criar }
