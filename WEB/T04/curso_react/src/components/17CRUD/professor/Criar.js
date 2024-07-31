@@ -6,7 +6,16 @@ const Criar = () => {
     
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
-    const [titulacao, setTitulacao] = useState("")
+    const [titulacao, setTitulacao] = useState("MESTRADO")
+
+    
+    const handleInputNome = (event) => {
+        setNome(event.target.value)
+    }
+
+    const handleInputCurso = (event) => {
+        setCurso(event.target.value)
+    }
 
     const handleSelect = (event) => {
         setTitulacao(event.target.value)
@@ -14,12 +23,13 @@ const Criar = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        alert("Nome: " + nome + "\n Curso: " + curso + " \n Titulacao: " + titulacao)
+        alert("Nome: " + nome + "\nCurso: " + curso + " \nTitulacao: " + titulacao)
     }
     
     return (
         <div>
             <h1>Criar Professor</h1>
+            <h3>{titulacao}</h3>
             <form className="form-content" onSubmit={handleSubmit}>
 
                 <div className="mb-3">
@@ -29,7 +39,7 @@ const Criar = () => {
                         type="text"
                         name="nome" 
                         id="inputNome"
-                        onChange={(event)=>setNome(event.target.value)}
+                        onChange={handleInputNome}
                     />
                 </div>
                 
@@ -40,7 +50,7 @@ const Criar = () => {
                         type="text"
                         name="curso"
                         id="inputCurso"
-                        onChange={(event)=>setCurso(event.target.value)} 
+                        onChange={handleInputCurso} 
                     />
                 </div>
 
@@ -50,7 +60,7 @@ const Criar = () => {
                         className="form-select"
                         value={titulacao}
                         id="selectTitulacao"
-                        onChange={(event) => setTitulacao(event.target.value)}
+                        onChange={handleSelect}
                     >
                         <option value="GRADUACAO">GRADUAÇÃO</option>
                         <option value="MESTRADO">MESTRADO</option>
