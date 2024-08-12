@@ -1,7 +1,59 @@
-import professores from "../data/db_professor";
+//import professores from "../data/db_professor";
+import { useState, useEffect } from "react";
 import "../css/crud.css";
+import axios from "axios";
 
 const ListarProfessor = () => {
+  const [professores, setProfessores] = useState([]);
+
+  useEffect(() => {
+    //getProfessoresAxiosThenCatch();
+    //getProfessoresAxiosAsyncAwait();
+    //getProfessoresFetchThenCatch();
+    getProfessoresFetchAsyncAwait();
+  }, []);
+
+  const getProfessoresFetchAsyncAwait = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/professores");
+      const json = await response.json();
+      setProfessores(json);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getProfessoresFetchThenCatch = () => {
+    fetch("http://localhost:3001/professores")
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        //console.log(json)
+        setProfessores(json);
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const getProfessoresAxiosAsyncAwait = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/professores");
+      setProfessores(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getProfessoresAxiosThenCatch = () => {
+    axios
+      .get("http://localhost:3001/professores")
+      .then((response) => {
+        //console.log(response.data)
+        setProfessores(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
   const corpoTabela = () => {
     const novoArray = professores.map(
       (professor) => {
