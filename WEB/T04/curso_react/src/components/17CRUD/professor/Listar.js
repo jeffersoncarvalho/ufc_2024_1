@@ -1,7 +1,28 @@
-import professores from "../data/db_professor";
+//import professores from "../data/db_professor";
+import { useEffect, useState } from "react"
 import "../css/crud.css"
+import axios from "axios"
 
 const Listar = () => {
+
+  const [professores, setProfessores] = useState([])
+
+  useEffect(
+    () => {
+      axios.get("http://localhost:3001/professores")
+      .then(
+        (response) => {
+          //console.log(response.data)
+          setProfessores(response.data)
+        }
+      )
+      .catch(error => console.log(error))
+    }
+    ,
+    []
+  )
+
+
   const renderizarProfessores = () => {
     const vetorResultado = professores.map(
         (professor) => {

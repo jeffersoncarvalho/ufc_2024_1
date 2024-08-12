@@ -1,4 +1,4 @@
-import { eventWrapper } from "@testing-library/user-event/dist/utils"
+import "../css/crud.css"
 import { useState } from "react"
 
 const CriarProfessor = () => {
@@ -7,10 +7,14 @@ const CriarProfessor = () => {
     const [curso, setCurso] = useState("")
     const [titulacao, setTitulacao] = useState("GRAD")
     const [ai, setAi] = useState({es:false,lc:false,mc:false,al:false})
-    const [universidade, setUniversidade] = useState("UFC")
+    const [universidade, setUniversidade] = useState({ifce:false,ufc:false})
 
     const handleRadio = (event) => {
-        setUniversidade(event.target.value)
+        const reset = {ifce:false,ufc:false}
+        setUniversidade({
+            ...reset,
+            [event.target.value]:event.target.checked
+        })
     }
 
     const handleCheckbox = (event) => {
@@ -28,9 +32,9 @@ const CriarProfessor = () => {
     }
 
     return (
-        <div>
+        <div className="page-content">
             <h1>Criar Professor</h1>
-            <h3>{universidade}</h3>
+            <h3>{JSON.stringify(universidade)}</h3>
             <form onSubmit={handleSubmit}>
 
                 <div>
@@ -80,9 +84,9 @@ const CriarProfessor = () => {
                     </select>
                 </div>
 
-                <div>
+                <div style={{ marginTop: "10px"}}>
                     <label className="form-label">Áreas de Interesse</label>
-                    <div>
+                    <div className="form-check">
                         <input 
                             id="idES"
                             type="checkbox"
@@ -93,7 +97,7 @@ const CriarProfessor = () => {
                         />
                         <label htmlFor="idES" className="form-check-label">Engenharia de Software</label>
                     </div>
-                    <div>
+                    <div className="form-check">
                         <input 
                             id="idLC"
                             type="checkbox"
@@ -104,7 +108,7 @@ const CriarProfessor = () => {
                         />
                         <label htmlFor="idLC" className="form-check-label">Lógica Computacional</label>
                     </div>
-                    <div>
+                    <div className="form-check">
                         <input 
                             id="idMC"
                             type="checkbox"
@@ -115,7 +119,7 @@ const CriarProfessor = () => {
                         />
                         <label htmlFor="idMC" className="form-check-label">Matemática Computacional</label>
                     </div>
-                    <div>
+                    <div className="form-check">
                         <input 
                             id="idAL"
                             type="checkbox"
@@ -128,24 +132,27 @@ const CriarProfessor = () => {
                     </div>
                 </div>
 
-                <div>
-                    <div>
+                <div style={{marginTop:"10px"}}>
+                    <label className="form-label">Universidade</label>
+                    <div className="form-check">
                         <input 
                             id="idUFC"
                             type="radio"
                             name="universidade"
-                            value="UFC"
+                            value="ufc"
+                            checked={universidade.ufc}
                             onChange={handleRadio}
                             className="form-check-input"
                         />
                         <label htmlFor="idUFC" className="form-check-label">UFC</label>
                     </div>
-                    <div>
+                    <div className="form-check">
                         <input 
                             id="idIFCE"
                             type="radio"
                             name="universidade"
-                            value="IFCE"
+                            value="ifce"
+                            checked={universidade.ifce}
                             onChange={handleRadio}
                             className="form-check-input"
                         />
@@ -153,8 +160,8 @@ const CriarProfessor = () => {
                     </div>
                 </div>
 
-                <div>
-                    <button type="submit">
+                <div style={{marginTop: "10px"}}>
+                    <button type="submit" className="btn btn-primary">
                         SUBMETER
                     </button>
                 </div>

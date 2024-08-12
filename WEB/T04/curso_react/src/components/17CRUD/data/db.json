@@ -1,0 +1,12 @@
+{
+    "professores": [
+        { "id":1, "nome": "Wladimir Tavares da Silva ", "curso": "CC", "titulacao": "DOUTORADO" },
+        { "id":2, "nome": "Fábio Carlos", "curso": "CC", "titulacao": "DOUTORADO" },
+        { "id":3, "nome": "João Marcelo", "curso": "CC", "titulacao": "DOUTORADO" },
+        { "id":4, "nome": "Davi Romero", "curso": "CC", "titulacao": "DOUTORADO" },
+        { "id":5, "nome": "Paulo Henrique", "curso": "CC", "titulacao": "DOUTORADO" }
+    ],
+    "alunos": [
+
+    ]
+}
