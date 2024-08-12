@@ -7,7 +7,7 @@ const Criar = () => {
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
     const [titulacao, setTitulacao] = useState("MESTRADO")
-    const [ai, setAi] = useState({es:false, lc:false, mc:false}) //ái = área de interesse
+    const [ai, setAi] = useState({es:false, lc:false, mc:false}) //ai = área de interesse
     const [universidade, setUniversidade] = useState({ufc:false,ifce:false})
 
     const handleRadio = (event) => {
