@@ -1,6 +1,7 @@
 //import professores from "../data/db_professor";
+import "../../css/crud.css";
+
 import { useState, useEffect } from "react";
-import "../css/crud.css";
 import axios from "axios";
 
 const ListarProfessor = () => {
@@ -11,6 +12,7 @@ const ListarProfessor = () => {
     //getProfessoresAxiosAsyncAwait();
     //getProfessoresFetchThenCatch();
     getProfessoresFetchAsyncAwait();
+    
   }, []);
 
   const getProfessoresFetchAsyncAwait = async () => {
@@ -63,6 +65,7 @@ const ListarProfessor = () => {
             <td>{professor.nome}</td>
             <td>{professor.curso}</td>
             <td>{professor.titulacao}</td>
+            
           </tr>
         ); //return de cada elemento como um JSX
       } //funcao arrow
@@ -80,6 +83,7 @@ const ListarProfessor = () => {
             <th scope="col">Nome</th>
             <th scope="col">Curso</th>
             <th scope="col">Titulação</th>
+            
           </tr>
         </thead>
         <tbody>{corpoTabela()}</tbody>

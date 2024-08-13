@@ -1,4 +1,4 @@
-import "../css/crud.css"
+import "../../css/crud.css"
 import { useState } from "react"
 
 const CriarProfessor = () => {

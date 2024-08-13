@@ -8,7 +8,7 @@ const Home = () => {
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" style={{marginLeft:"13px"}} href="/">
             CRUD
           </a>
           <div className="collapse navbar-collapse">

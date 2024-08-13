@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from "./Home";
-import CriarProfessor from "./professor/CriarProfessor";
-import ListarProfessor from "./professor/ListarProfessor";
-import EditarProfessor from "./professor/EditarProfessor";
+import Home from "./components/Home";
+import CriarProfessor from "./components/professor/CriarProfessor" 
+import ListarProfessor from "./components/professor/ListarProfessor";
+import EditarProfessor from "./components//professor/EditarProfessor";
 
 const router = createBrowserRouter([
     {
