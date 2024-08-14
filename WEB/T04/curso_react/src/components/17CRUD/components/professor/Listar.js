@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react"
 import "../../css/crud.css"
-import axios from "axios"
+import ProfessorService from "../../services/ProfessorService";
+
+import { useEffect, useState } from "react"
 
 const Listar = () => {
 
@@ -8,51 +9,12 @@ const Listar = () => {
 
   useEffect(
     () => {
-      //getProfessoresAxiosThenCatch()
-      //getProfessoresAxiosAsyncAwait()
-      //getProfessoresFetchThenCatch()
-      getProfessoresFetchAsyncAwait()
+      ProfessorService
+      .getProfessoresFetchAsyncAwait(data => setProfessores(data))
     }
     ,
     []
   )
-
-  const getProfessoresAxiosThenCatch = () => {
-    axios.get("http://localhost:3001/professores")
-      .then(
-        (response) => {
-          //console.log(response.data)
-          setProfessores(response.data)
-        }
-      )
-      .catch(error => console.log(error))
-  }
-
-  const getProfessoresAxiosAsyncAwait = async () => {
-    try{
-      const response = await axios.get("http://localhost:3001/professores")
-      setProfessores(response.data)
-    }catch(error) {
-      console.log(error)
-    }
-  }
-
-  const getProfessoresFetchThenCatch = () => {
-    fetch("http://localhost:3001/professores")
-    .then(response => response.json())
-    .then(json => setProfessores(json))
-    .catch(error => console.log(error))
-  }
-
-  const getProfessoresFetchAsyncAwait = async () => {
-    try{
-      const response = await fetch("http://localhost:3001/professores")
-      const json = await response.json()
-      setProfessores(json)
-    }catch(error){
-      console.log(error)
-    }
-  }
 
   const renderizarProfessores = () => {
     const vetorResultado = professores.map(

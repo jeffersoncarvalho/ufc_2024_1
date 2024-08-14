@@ -1,6 +1,7 @@
 import "../../css/crud.css"
 
 import { useState } from "react"
+import axios from "axios"
 
 const Criar = () => {
     
@@ -9,6 +10,16 @@ const Criar = () => {
     const [titulacao, setTitulacao] = useState("MESTRADO")
     const [ai, setAi] = useState({es:false, lc:false, mc:false}) //ai = área de interesse
     const [universidade, setUniversidade] = useState({ufc:false,ifce:false})
+
+    const postProfessorAxiosThenCatch = (professor) => {
+        axios.post("http://localhost:3001/professores", professor)
+        .then(
+            (response) => {
+                console.log(response)
+            }
+        )
+        .catch(error=>console.log(error))
+    }
 
     const handleRadio = (event) => {
         const reset = {ufc:false,ifce:false}
@@ -42,7 +53,10 @@ const Criar = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        alert("Nome: " + nome + "\nCurso: " + curso + " \nTitulacao: " + titulacao)
+        //alert("Nome: " + nome + "\nCurso: " + curso + " \nTitulacao: " + titulacao)
+        const novoProfessor = {nome,curso,titulacao,ai,universidade}
+        postProfessorAxiosThenCatch(novoProfessor)
+
     }
     
     return (
