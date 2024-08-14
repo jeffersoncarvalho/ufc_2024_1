@@ -1,3 +1,15 @@
+button {
+    margin-left: 10px;
+}
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 1.4em 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
 .page-content {
     margin-top: 30px;
     margin-left: 25px;
@@ -8,10 +20,6 @@
     margin-top: 15px;
 }
 
-button {
-    margin-left: 10px;
-}
-
 .div-button-submit {
     display: flex;
     flex-direction: row;
@@ -20,12 +28,10 @@ button {
     margin-top: 30px;
 }
 
-fieldset.scheduler-border {
-    border: 1px groove #ddd !important;
-    padding: 1.4em 1.4em 1.4em 1.4em !important;
-    margin: 0 0 1.5em 0 !important;
-    -webkit-box-shadow:  0px 0px 0px 0px #000;
-            box-shadow:  0px 0px 0px 0px #000;
+.button-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 

@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Home from "./Home";
+import Home from "./components/Home";
 
-import { Criar as CriarProfessor } from "./professor/Criar";
-import Listar from "./professor/Listar";
-import Editar from "./professor/Editar";
+import { Criar } from "./components/professor/Criar";
+import Listar from "./components/professor/Listar";
+import Editar from "./components/professor/Editar";
 
 const router = createBrowserRouter(
     [
@@ -18,7 +18,7 @@ const router = createBrowserRouter(
                 },
                 {
                     path:"professor/criar",
-                    element:<CriarProfessor />
+                    element:<Criar />
                 },
                 {
                     path:"professor/editar",

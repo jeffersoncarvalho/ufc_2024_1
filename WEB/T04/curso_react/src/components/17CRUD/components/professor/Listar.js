@@ -1,6 +1,5 @@
-//import professores from "../data/db_professor";
 import { useEffect, useState } from "react"
-import "../css/crud.css"
+import "../../css/crud.css"
 import axios from "axios"
 
 const Listar = () => {
@@ -9,7 +8,17 @@ const Listar = () => {
 
   useEffect(
     () => {
-      axios.get("http://localhost:3001/professores")
+      //getProfessoresAxiosThenCatch()
+      //getProfessoresAxiosAsyncAwait()
+      //getProfessoresFetchThenCatch()
+      getProfessoresFetchAsyncAwait()
+    }
+    ,
+    []
+  )
+
+  const getProfessoresAxiosThenCatch = () => {
+    axios.get("http://localhost:3001/professores")
       .then(
         (response) => {
           //console.log(response.data)
@@ -17,11 +26,33 @@ const Listar = () => {
         }
       )
       .catch(error => console.log(error))
-    }
-    ,
-    []
-  )
+  }
 
+  const getProfessoresAxiosAsyncAwait = async () => {
+    try{
+      const response = await axios.get("http://localhost:3001/professores")
+      setProfessores(response.data)
+    }catch(error) {
+      console.log(error)
+    }
+  }
+
+  const getProfessoresFetchThenCatch = () => {
+    fetch("http://localhost:3001/professores")
+    .then(response => response.json())
+    .then(json => setProfessores(json))
+    .catch(error => console.log(error))
+  }
+
+  const getProfessoresFetchAsyncAwait = async () => {
+    try{
+      const response = await fetch("http://localhost:3001/professores")
+      const json = await response.json()
+      setProfessores(json)
+    }catch(error){
+      console.log(error)
+    }
+  }
 
   const renderizarProfessores = () => {
     const vetorResultado = professores.map(
@@ -33,8 +64,8 @@ const Listar = () => {
                     <td>{professor.curso}</td>
                     <td>{professor.titulacao}</td>
                     <td>
-                        <div>
-                            <button type="button" className="btn btn-secondary">Editar</button>
+                        <div className="button-content">
+                            <button type="button" className="btn btn-primary">Editar</button>
                             <button type="button" className="btn btn-danger">Apagar</button>
                         </div>
                     </td>
@@ -49,8 +80,8 @@ const Listar = () => {
     <div className="page-content">
       <h1>Listar Professor</h1>
       <div className="table-content">
-        <table className="table table-striped">
-          <thead>
+        <table className="table table-striped table-bordered">
+          <thead className="table-dark">
             <tr>
               <th scope="col">ID</th>
               <th scope="col">Nome</th>
