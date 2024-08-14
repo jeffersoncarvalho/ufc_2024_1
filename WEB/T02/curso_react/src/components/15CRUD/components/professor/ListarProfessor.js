@@ -1,60 +1,18 @@
-//import professores from "../data/db_professor";
+import { Link } from "react-router-dom";
+
 import "../../css/crud.css";
+import ProfessorService from "../../services/ProfessorService";
 
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 const ListarProfessor = () => {
   const [professores, setProfessores] = useState([]);
 
   useEffect(() => {
-    //getProfessoresAxiosThenCatch();
-    //getProfessoresAxiosAsyncAwait();
-    //getProfessoresFetchThenCatch();
-    getProfessoresFetchAsyncAwait();
-    
-  }, []);
-
-  const getProfessoresFetchAsyncAwait = async () => {
-    try {
-      const response = await fetch("http://localhost:3001/professores");
-      const json = await response.json();
+    ProfessorService.getProfessoresAxiosAsyncAwait((json) => {
       setProfessores(json);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getProfessoresFetchThenCatch = () => {
-    fetch("http://localhost:3001/professores")
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => {
-        //console.log(json)
-        setProfessores(json);
-      })
-      .catch((error) => console.log(error));
-  };
-
-  const getProfessoresAxiosAsyncAwait = async () => {
-    try {
-      const response = await axios.get("http://localhost:3001/professores");
-      setProfessores(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getProfessoresAxiosThenCatch = () => {
-    axios
-      .get("http://localhost:3001/professores")
-      .then((response) => {
-        //console.log(response.data)
-        setProfessores(response.data);
-      })
-      .catch((error) => console.log(error));
-  };
+    });
+  }, []);
 
   const corpoTabela = () => {
     const novoArray = professores.map(
@@ -65,7 +23,22 @@ const ListarProfessor = () => {
             <td>{professor.nome}</td>
             <td>{professor.curso}</td>
             <td>{professor.titulacao}</td>
-            
+            <td className="button-content">
+
+              <Link
+                className="btn btn-primary"
+                to={`/professores/editar/${professor.id}`}
+              >
+                Editar
+              </Link>
+
+              <button 
+                className="btn btn-primary"
+              >
+                Editar
+              </button>
+              <button className="btn btn-danger">Apagar</button>
+            </td>
           </tr>
         ); //return de cada elemento como um JSX
       } //funcao arrow
@@ -76,14 +49,14 @@ const ListarProfessor = () => {
   return (
     <div className="page-content">
       <h1>Listar Professores</h1>
-      <table className="table table-striped table-content">
-        <thead>
+      <table className="table table-striped table-content table-bordered">
+        <thead className="table-dark">
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Nome</th>
             <th scope="col">Curso</th>
             <th scope="col">Titulação</th>
-            
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>{corpoTabela()}</tbody>

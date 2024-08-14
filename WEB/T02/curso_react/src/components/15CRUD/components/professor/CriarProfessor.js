@@ -1,6 +1,8 @@
 import "../../css/crud.css"
 import { useState } from "react"
 
+import axios from "axios"
+
 const CriarProfessor = () => {
 
     const [nome, setNome] = useState("")
@@ -28,13 +30,21 @@ const CriarProfessor = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        alert("\n" + nome +"\n" + curso + "\n" + titulacao )
+        const novoProfessor = {nome,curso,titulacao,ai,universidade}
+        postProfessorAxiosThenCatch(novoProfessor)
+    }
+
+    const postProfessorAxiosThenCatch = (novoProfessor) => {
+        axios.post("http://localhost:3001/professores", novoProfessor)
+        .then((response) => {
+            console.log(response)
+        })
+        .catch(error => console.log(error))
     }
 
     return (
         <div className="page-content">
             <h1>Criar Professor</h1>
-            <h3>{JSON.stringify(universidade)}</h3>
             <form onSubmit={handleSubmit}>
 
                 <div>

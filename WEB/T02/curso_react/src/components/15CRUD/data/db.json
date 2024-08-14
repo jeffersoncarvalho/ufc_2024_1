@@ -1,48 +1,53 @@
 {
-    "professores": [
-        {
-            "id":0,
-            "nome":"Wladimir Tavares",
-            "curso":"ES",
-            "ai": {"es":false, "lc":false, "md":false, "al":false},
-            "titulacao":"MEST",
-            "universidade":"ufc"
-        },
-        {
-            "id":1,
-            "nome":"Fábio Campos",
-            "curso":"ES",
-            "ai": {"es":false, "lc":false, "md":false, "al":false},
-            "titulacao":"MEST",
-            "universidade":"ufc"
-        },
-        {
-            "id":2,
-            "nome":"João Marcelo",
-            "curso":"ES",
-            "ai": {"es":false, "lc":false, "md":false, "al":false},
-            "titulacao":"MEST",
-            "universidade":"ufc"
-        },
-        {
-            "id":3,
-            "nome":"Francisco Aragão",
-            "curso":"ES",
-            "ai": {"es":false, "lc":false, "md":false, "al":false},
-            "titulacao":"MEST",
-            "universidade":"ufc"
-        },
-        {
-            "id":4,
-            "nome":"Paulo de Tarso",
-            "curso":"ES",
-            "ai": {"es":false, "lc":false, "md":false, "al":false},
-            "titulacao":"MEST",
-            "universidade":"ufc"
-        }
-    ],
-    "alunos": [
-        
-    ]
-
+  "professores": [
+    {
+      "nome": "Jefferson de Carvalho Silva",
+      "curso": "Sistemas de Informação",
+      "titulacao": "MEST",
+      "ai": {
+        "es": true,
+        "lc": false,
+        "mc": true,
+        "al": true
+      },
+      "universidade": {
+        "ifce": false,
+        "ufc": true
+      },
+      "id": 1
+    },
+    {
+      "nome": "Wladimir Tavares",
+      "curso": "Design Digital",
+      "titulacao": "DOUT",
+      "ai": {
+        "es": false,
+        "lc": false,
+        "mc": true,
+        "al": false
+      },
+      "universidade": {
+        "ifce": true,
+        "ufc": false
+      },
+      "id": 100
+    },
+    {
+      "nome": "Vito Corleone",
+      "curso": "Ciência da Computação",
+      "titulacao": "DOUT",
+      "ai": {
+        "es": true,
+        "lc": false,
+        "mc": false,
+        "al": false
+      },
+      "universidade": {
+        "ifce": false,
+        "ufc": true
+      },
+      "id": 101
+    }
+  ],
+  "alunos": []
 }

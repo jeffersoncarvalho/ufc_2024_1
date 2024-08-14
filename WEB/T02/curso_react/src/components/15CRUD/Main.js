@@ -19,7 +19,7 @@ const router = createBrowserRouter([
                 element:<ListarProfessor />
             },
             {
-                path:"professores/editar",
+                path:"professores/editar/:id",
                 element:<EditarProfessor />
             },
         ]

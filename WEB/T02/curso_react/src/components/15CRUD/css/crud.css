@@ -8,7 +8,7 @@
     margin-top: 30px;
 }
 
-.button-content{
+.button-content {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
