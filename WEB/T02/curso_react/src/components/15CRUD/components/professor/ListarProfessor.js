@@ -5,6 +5,7 @@ import ProfessorService from "../../services/ProfessorService";
 
 import { useState, useEffect } from "react";
 
+
 const ListarProfessor = () => {
   const [professores, setProfessores] = useState([]);
 
@@ -13,6 +14,22 @@ const ListarProfessor = () => {
       setProfessores(json);
     });
   }, []);
+
+  const deleteProfessor = (id) => {
+    if(window.confirm(`Deseja realmente excluir id = ${id}`)){
+      ProfessorService.deleteProfessorById(
+        id,
+        (response) => {
+          //console.log(response)
+          const res = professores.filter(
+            (professor) => professor.id !== id
+          )
+          //console.log(res)
+          setProfessores(res)
+        }
+      )
+    }
+  }
 
   const corpoTabela = () => {
     const novoArray = professores.map(
@@ -32,7 +49,12 @@ const ListarProfessor = () => {
                 Editar
               </Link>
 
-              <button className="btn btn-danger">Apagar</button>
+              <button 
+                className="btn btn-danger"
+                onClick={() => deleteProfessor(professor.id)}
+              >
+                Apagar
+              </button>
             </td>
           </tr>
         ); //return de cada elemento como um JSX
