@@ -96,6 +96,7 @@ const CriarProfessor = () => {
 
                 <div style={{ marginTop: "10px"}}>
                     <label className="form-label">Áreas de Interesse</label>
+                    <fieldset className="scheduler-border">
                     <div className="form-check">
                         <input 
                             id="idES"
@@ -140,10 +141,12 @@ const CriarProfessor = () => {
                         />
                         <label htmlFor="idAL" className="form-check-label">Algoritimos</label>
                     </div>
+                    </fieldset>
                 </div>
 
                 <div style={{marginTop:"10px"}}>
                     <label className="form-label">Universidade</label>
+                    <fieldset className="scheduler-border">
                     <div className="form-check">
                         <input 
                             id="idUFC"
@@ -168,9 +171,10 @@ const CriarProfessor = () => {
                         />
                         <label htmlFor="idIFCE" className="form-check-label">IFCE</label>
                     </div>
+                    </fieldset>
                 </div>
 
-                <div style={{marginTop: "10px"}}>
+                <div className="div-button-submit">
                     <button type="submit" className="btn btn-primary">
                         SUBMETER
                     </button>

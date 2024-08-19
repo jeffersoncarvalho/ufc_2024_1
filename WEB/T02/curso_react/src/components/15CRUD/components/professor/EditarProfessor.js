@@ -7,6 +7,8 @@ const EditarProfessor = () => {
     const [nome, setNome] = useState("")
     const [curso, setCurso] = useState("")
     const [titulacao, setTitulacao] = useState("GRAD")
+    const [ai, setAi] = useState({es:false,lc:false,mc:false,al:false})
+    const [universidade, setUniversidade] = useState({ifce:false,ufc:false})
 
     const {id} = useParams()
 
@@ -15,15 +17,34 @@ const EditarProfessor = () => {
             axios.get(`http://localhost:3001/professores/${id}`)
             .then((response) => {
                 //console.log(response.data)
-                const {nome,curso,titulacao} = response.data
+                const {nome,curso,titulacao,ai,universidade} = response.data
                 setNome(nome)
                 setCurso(curso)
                 setTitulacao(titulacao)
+                setAi(ai)
+                setUniversidade(universidade)
             })
             .catch(error=>console.log(error))
         },
         []
-    ) 
+    )
+
+    const handleRadio = (event) => {
+        const reset = {ifce:false,ufc:false}
+        setUniversidade({
+            ...reset,
+            [event.target.value]:event.target.checked
+        })
+    }
+
+    const handleCheckbox = (event) => {
+        setAi(
+            {
+                ...ai,
+                [event.target.name]:event.target.checked
+            }
+        )
+    }
 
     const handleSubmit = (event) => {
 
@@ -31,7 +52,7 @@ const EditarProfessor = () => {
 
     return (
         <div className="page-content">
-            <h1>Criar Professor</h1>
+            <h1>Editar Professor</h1>
             <form onSubmit={handleSubmit}>
 
                 <div>
@@ -80,6 +101,93 @@ const EditarProfessor = () => {
                         <option value="DOUT" >DOUTORADO</option>
                     </select>
                 </div>
+
+                <div style={{ marginTop: "10px"}}>
+                    <label className="form-label">Áreas de Interesse</label>
+                    <fieldset className="scheduler-border">
+                    <div className="form-check">
+                        <input 
+                            id="idES"
+                            type="checkbox"
+                            checked={ai.es}
+                            name="es"
+                            onChange={handleCheckbox}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="idES" className="form-check-label">Engenharia de Software</label>
+                    </div>
+                    <div className="form-check">
+                        <input 
+                            id="idLC"
+                            type="checkbox"
+                            checked={ai.lc}
+                            name="lc"
+                            onChange={handleCheckbox}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="idLC" className="form-check-label">Lógica Computacional</label>
+                    </div>
+                    <div className="form-check">
+                        <input 
+                            id="idMC"
+                            type="checkbox"
+                            checked={ai.mc}
+                            name="mc"
+                            onChange={handleCheckbox}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="idMC" className="form-check-label">Matemática Computacional</label>
+                    </div>
+                    <div className="form-check">
+                        <input 
+                            id="idAL"
+                            type="checkbox"
+                            checked={ai.al}
+                            name="al"
+                            onChange={handleCheckbox}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="idAL" className="form-check-label">Algoritimos</label>
+                    </div>
+                    </fieldset>
+                </div>
+
+                <div style={{marginTop:"10px"}}>
+                    <label className="form-label">Universidade</label>
+                    <fieldset className="scheduler-border">
+                    <div className="form-check">
+                        <input 
+                            id="idUFC"
+                            type="radio"
+                            name="universidade"
+                            value="ufc"
+                            checked={universidade.ufc}
+                            onChange={handleRadio}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="idUFC" className="form-check-label">UFC</label>
+                    </div>
+                    <div className="form-check">
+                        <input 
+                            id="idIFCE"
+                            type="radio"
+                            name="universidade"
+                            value="ifce"
+                            checked={universidade.ifce}
+                            onChange={handleRadio}
+                            className="form-check-input"
+                        />
+                        <label htmlFor="idIFCE" className="form-check-label">IFCE</label>
+                    </div>
+                    </fieldset>
+                </div>
+
+                <div className="div-button-submit">
+                    <button type="submit" className="btn btn-primary">
+                        ATUALIZAR
+                    </button>
+                </div>
+
             </form>
         </div>
 

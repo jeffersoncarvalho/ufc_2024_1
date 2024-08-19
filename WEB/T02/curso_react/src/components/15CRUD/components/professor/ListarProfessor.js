@@ -32,11 +32,6 @@ const ListarProfessor = () => {
                 Editar
               </Link>
 
-              <button 
-                className="btn btn-primary"
-              >
-                Editar
-              </button>
               <button className="btn btn-danger">Apagar</button>
             </td>
           </tr>
