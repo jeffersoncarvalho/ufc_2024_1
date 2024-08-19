@@ -2,10 +2,14 @@ import "../../css/crud.css"
 import ProfessorService from "../../services/ProfessorService";
 
 import { useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom";
+
+import axios from "axios";
 
 const Listar = () => {
 
   const [professores, setProfessores] = useState([])
+  const navigate = useNavigate()
 
   useEffect(
     () => {
@@ -15,6 +19,17 @@ const Listar = () => {
     ,
     []
   )
+
+  const handleDelete = (id) => {
+    if (window.confirm(`Deseja excluir id = ${id}`)) {
+      ProfessorService.deleteProfessor(
+        id,
+      (response) =>{
+        alert(response)
+      })
+
+    }
+  }
 
   const renderizarProfessores = () => {
     const vetorResultado = professores.map(
@@ -27,8 +42,19 @@ const Listar = () => {
                     <td>{professor.titulacao}</td>
                     <td>
                         <div className="button-content">
-                            <button type="button" className="btn btn-primary">Editar</button>
-                            <button type="button" className="btn btn-danger">Apagar</button>
+                            <Link 
+                              to={`/professor/editar/${professor.id}`}
+                              className="btn btn-primary"
+                            >
+                              Editar
+                            </Link>
+                            <button 
+                              type="button" 
+                              className="btn btn-danger"
+                              onClick={() => handleDelete(professor.id)}
+                            >
+                              Apagar
+                            </button>
                         </div>
                     </td>
                 </tr>

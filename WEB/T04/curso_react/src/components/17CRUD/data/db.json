@@ -1,9 +1,9 @@
 {
   "professores": [
     {
-      "nome": "Wladimir Tavares",
-      "curso": "Sistemas de Informação",
-      "titulacao": "DOUTORADO",
+      "nome": "Wladimir Tavares da Silva",
+      "curso": "Design Digital",
+      "titulacao": "GRADUACAO",
       "ai": {
         "es": false,
         "lc": false,
@@ -14,51 +14,6 @@
         "ifce": true
       },
       "id": 1
-    },
-    {
-      "nome": "Jefferson de Carvalho Silva",
-      "curso": "Design Digital",
-      "titulacao": "DOUTORADO",
-      "ai": {
-        "es": true,
-        "lc": false,
-        "mc": false
-      },
-      "universidade": {
-        "ufc": true,
-        "ifce": false
-      },
-      "id": 2
-    },
-    {
-      "nome": "Fulano da Silva Sauro",
-      "curso": "Sistemas de Informação",
-      "titulacao": "GRADUACAO",
-      "ai": {
-        "es": false,
-        "lc": true,
-        "mc": false
-      },
-      "universidade": {
-        "ufc": true,
-        "ifce": false
-      },
-      "id": 3
-    },
-    {
-      "nome": "João Marcelo",
-      "curso": "Redes de Computadores",
-      "titulacao": "MESTRADO",
-      "ai": {
-        "es": false,
-        "lc": true,
-        "mc": false
-      },
-      "universidade": {
-        "ufc": true,
-        "ifce": false
-      },
-      "id": 4
     }
   ],
   "alunos": []
