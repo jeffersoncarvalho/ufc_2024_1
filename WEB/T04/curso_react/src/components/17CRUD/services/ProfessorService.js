@@ -2,6 +2,8 @@ import axios from "axios";
 
 //const url = "http://localhost:3001/professores";
 const url = "http://localhost:3003/professores/"
+//const url = "http://10.0.116.0:3003/professores/"
+
 class ProfessorService {
   //GET SERVICES
   static getProfessoresAxiosThenCatch = (callback) => {
@@ -53,7 +55,7 @@ class ProfessorService {
   //POST SERVICES
   static postProfessorAxiosThenCatch = (professor, callback) => {
     axios
-      .post(url, professor)
+      .post(url+"criar", professor)
       .then((response) => {
         callback(response);
       })
@@ -61,7 +63,7 @@ class ProfessorService {
   };
 
   static postProfessorFetchThenCatch = (professor, callback) => {
-    fetch(url, {
+    fetch(url+"criar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(professor),
