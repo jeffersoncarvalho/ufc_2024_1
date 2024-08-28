@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const url = "http://localhost:3001/professores";
+const url = "http://localhost:3001/professores/";
 
 class ProfessorService {
   static getProfessoresFetchAsyncAwait = async (callback) => {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url+"listar");
       const json = await response.json();
       callback(json);
     } catch (error) {
@@ -14,7 +14,7 @@ class ProfessorService {
   };
 
   static getProfessoresFetchThenCatch = (callback) => {
-    fetch(url)
+    fetch(url+"listar")
       .then((response) => {
         return response.json();
       })
@@ -27,7 +27,7 @@ class ProfessorService {
 
   static getProfessoresAxiosAsyncAwait = async (callback) => {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url+"listar");
       callback(response.data);
     } catch (error) {
       console.log(error);
@@ -36,7 +36,7 @@ class ProfessorService {
 
   static getProfessoresAxiosThenCatch = (callback) => {
     axios
-      .get(url)
+      .get(url+"listar")
       .then((response) => {
         //console.log(response.data)
         callback(response.data);

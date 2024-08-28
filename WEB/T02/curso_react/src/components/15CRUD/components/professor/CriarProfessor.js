@@ -35,7 +35,7 @@ const CriarProfessor = () => {
     }
 
     const postProfessorAxiosThenCatch = (novoProfessor) => {
-        axios.post("http://localhost:3001/professores", novoProfessor)
+        axios.post("http://localhost:3001/professores/criar", novoProfessor)
         .then((response) => {
             console.log(response)
         })

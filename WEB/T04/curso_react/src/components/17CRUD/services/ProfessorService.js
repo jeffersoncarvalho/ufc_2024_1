@@ -43,11 +43,12 @@ class ProfessorService {
   };
 
   static getProfessorById = (id, callback) => {
-    axios
-      .get(`http://localhost:3001/professores/?id=${id}`)
+    //.get(`http://localhost:3001/professores/?id=${id}`)
+    axios  
+      .get(`http://localhost:3003/professores/recuperar/${id}`)
       .then((response) => {
-        //const { nome, curso, titulacao, ai, universidade } = response.data[0];
-        callback(response.data[0]);
+        //console.log(response)
+        callback(response.data);
       })
       .catch((error) => console.log(error));
   };
@@ -78,8 +79,9 @@ class ProfessorService {
   // PUT SERVICES
 
   static updateProfessor = (id, professorEditado, callback) => {
+    //.put(`http://localhost:3001/professores/${id}`, professorEditado)
     axios
-      .put(`http://localhost:3001/professores/${id}`, professorEditado)
+      .put(`http://localhost:3003/professores/atualizar/${id}`, professorEditado)
       .then((response) => {
         //console.log(response)
         callback(response)
@@ -90,10 +92,13 @@ class ProfessorService {
   // DELETE SERVICES
 
   static deleteProfessor = (id, callback) => {
-    axios.delete(`http://localhost:3001/professores/${id}`)
+    //.delete(`http://localhost:3001/professores/${id}`)
+    axios
+      .delete(`http://localhost:3003/professores/apagar/${id}`)
       .then(response => {
         alert("Professor apagado!")
         //navigate("/professor/listar")
+        console.log(response)
         callback("ok!")
       })
       .catch( error => console.log(error))

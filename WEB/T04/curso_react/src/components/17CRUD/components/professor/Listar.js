@@ -26,6 +26,10 @@ const Listar = () => {
         id,
       (response) =>{
         alert(response)
+        const result = professores.filter((professor) => professor.id!==id)
+        //console.log(result)
+        setProfessores(result)
+        //navigate(0)
       })
 
     }
