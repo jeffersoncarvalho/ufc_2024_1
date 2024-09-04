@@ -22,7 +22,7 @@ const ListarProfessor = () => {
         (response) => {
           //console.log(response)
           const res = professores.filter(
-            (professor) => professor.id !== id
+            (professor) => professor._id !== id
           )
           //console.log(res)
           setProfessores(res)
@@ -36,7 +36,7 @@ const ListarProfessor = () => {
       (professor) => {
         return (
           <tr>
-            <th scope="row">{professor.id}</th>
+            <th scope="row">{professor._id}</th>
             <td>{professor.nome}</td>
             <td>{professor.curso}</td>
             <td>{professor.titulacao}</td>
@@ -44,14 +44,14 @@ const ListarProfessor = () => {
 
               <Link
                 className="btn btn-primary"
-                to={`/professores/editar/${professor.id}`}
+                to={`/professores/editar/${professor._id}`}
               >
                 Editar
               </Link>
 
               <button 
                 className="btn btn-danger"
-                onClick={() => deleteProfessor(professor.id)}
+                onClick={() => deleteProfessor(professor._id)}
               >
                 Apagar
               </button>

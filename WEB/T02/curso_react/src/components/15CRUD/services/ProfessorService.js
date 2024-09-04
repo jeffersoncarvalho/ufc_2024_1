@@ -68,7 +68,7 @@ class ProfessorService {
 
   static deleteProfessorById = (id, callback) => {
     axios
-      .delete(`http://localhost:3001/professores/${id}`)
+      .delete(`http://localhost:3001/professores/apagar/${id}`)
       .then((response) => {
         //console.log(response);
         callback(response)
