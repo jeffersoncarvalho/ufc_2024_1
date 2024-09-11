@@ -2,17 +2,26 @@ import { Link } from "react-router-dom";
 
 import "../../css/crud.css";
 import ProfessorService from "../../services/ProfessorService";
+import ProfessorFirebaseService from "../../services/ProfessorFirebaseService";
+import FirebaseContext from "../../utils/FirebaseContext";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 
 const ListarProfessor = () => {
   const [professores, setProfessores] = useState([]);
+  const firebase = useContext(FirebaseContext)
 
   useEffect(() => {
-    ProfessorService.getProfessoresAxiosAsyncAwait((json) => {
+   /* ProfessorService.getProfessoresAxiosAsyncAwait((json) => {
       setProfessores(json);
-    });
+    });*/
+    ProfessorFirebaseService.listar(
+      firebase.getFirestoreDb(),
+      (professores) => {
+        setProfessores(professores)
+      }
+    )
   }, []);
 
   const deleteProfessor = (id) => {
@@ -22,7 +31,7 @@ const ListarProfessor = () => {
         (response) => {
           //console.log(response)
           const res = professores.filter(
-            (professor) => professor._id !== id
+            (professor) => professor.id !== id
           )
           //console.log(res)
           setProfessores(res)
@@ -36,7 +45,7 @@ const ListarProfessor = () => {
       (professor) => {
         return (
           <tr>
-            <th scope="row">{professor._id}</th>
+            <th scope="row">{professor.id}</th>
             <td>{professor.nome}</td>
             <td>{professor.curso}</td>
             <td>{professor.titulacao}</td>
@@ -44,7 +53,7 @@ const ListarProfessor = () => {
 
               <Link
                 className="btn btn-primary"
-                to={`/professores/editar/${professor._id}`}
+                to={`/professores/editar/${professor.id}`}
               >
                 Editar
               </Link>

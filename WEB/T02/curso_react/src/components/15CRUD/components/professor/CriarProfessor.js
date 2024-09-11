@@ -1,5 +1,8 @@
 import "../../css/crud.css"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import ProfessorFirebaseService from "../../services/ProfessorFirebaseService";
+import FirebaseContext from "../../utils/FirebaseContext";
+
 
 import axios from "axios"
 
@@ -10,6 +13,9 @@ const CriarProfessor = () => {
     const [titulacao, setTitulacao] = useState("GRAD")
     const [ai, setAi] = useState({es:false,lc:false,mc:false,al:false})
     const [universidade, setUniversidade] = useState({ifce:false,ufc:false})
+
+    const firebase = useContext(FirebaseContext)
+
 
     const handleRadio = (event) => {
         const reset = {ifce:false,ufc:false}
@@ -31,7 +37,14 @@ const CriarProfessor = () => {
     const handleSubmit = (event) => {
         event.preventDefault()
         const novoProfessor = {nome,curso,titulacao,ai,universidade}
-        postProfessorAxiosThenCatch(novoProfessor)
+        //postProfessorAxiosThenCatch(novoProfessor)
+        ProfessorFirebaseService.criar(
+            firebase.getFirestoreDb(),
+            novoProfessor,
+            (professor) => {
+                console.log(professor)
+            }
+        )
     }
 
     const postProfessorAxiosThenCatch = (novoProfessor) => {

@@ -1,7 +1,9 @@
 import "../../css/crud.css"
 import ProfessorService from "../../services/ProfessorService";
+import ProfessorFirebaseService from "../../services/ProfessorFirebaseService";
+import FirebaseContext from "../../utils/FirebaseContext";
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom";
 
 import axios from "axios";
@@ -10,11 +12,19 @@ const Listar = () => {
 
   const [professores, setProfessores] = useState([])
   const navigate = useNavigate()
+  const firebase = useContext(FirebaseContext)
 
   useEffect(
     () => {
-      ProfessorService
-      .getProfessoresFetchAsyncAwait(data => setProfessores(data))
+      /*ProfessorService
+      .getProfessoresFetchAsyncAwait(data => setProfessores(data))*/
+      ProfessorFirebaseService.listar(
+        firebase.getFirestoreDb(),
+        ( professores ) => {
+          //console.log(professores)
+          setProfessores(professores)
+        }
+      )
     }
     ,
     []
@@ -26,7 +36,7 @@ const Listar = () => {
         id,
       (response) =>{
         alert(response)
-        const result = professores.filter((professor) => professor.id!==id)
+        const result = professores.filter((professor) => professor._id!==id)
         //console.log(result)
         setProfessores(result)
         //navigate(0)
