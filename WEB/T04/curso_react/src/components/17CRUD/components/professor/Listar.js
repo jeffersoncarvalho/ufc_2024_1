@@ -32,7 +32,15 @@ const Listar = () => {
 
   const handleDelete = (id) => {
     if (window.confirm(`Deseja excluir id = ${id}`)) {
-      ProfessorService.deleteProfessor(
+      ProfessorFirebaseService.apagar(
+        firebase.getFirestoreDb(),
+        (response) => {
+          const result = professores.filter((professor) => professor.id!==id)
+          setProfessores(result)
+        },
+        id
+      )
+      /*ProfessorService.deleteProfessor(
         id,
       (response) =>{
         alert(response)
@@ -40,7 +48,7 @@ const Listar = () => {
         //console.log(result)
         setProfessores(result)
         //navigate(0)
-      })
+      })*/
 
     }
   }
