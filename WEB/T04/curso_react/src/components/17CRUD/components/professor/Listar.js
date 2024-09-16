@@ -88,7 +88,7 @@ const Listar = () => {
 
   return (
     <div className="page-content">
-      <h1>Listar Professor</h1>
+      <h1>Listar Professor {process.env.REACT_APP_LINK_API}</h1>
       <div className="table-content">
         <table className="table table-striped table-bordered">
           <thead className="table-dark">
